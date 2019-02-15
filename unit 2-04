@@ -1,0 +1,23 @@
+display.setDefault( "background", 55, 0, 1 )
+-----------------------------------------------------------------------------------------
+--
+-- how to add an event listener, so that when you touch an image you get feedback
+-- 
+-----------------------------------------------------------------------------------------
+local myText = display.newText( "Emmanuel", 100, 160, native.systemFont, 30 )
+myText:setFillColor( 6, 55, 0 )
+
+local soccerBall = display.newImageRect( "Enemy.png", 160, 100 )
+soccerBall.x = display.contentCenterX
+soccerBall.y = display.contentCenterY
+soccerBall.id = "ball object"
+ 
+local function onObjectTouch( event )
+    -- it is not perfect, but we will make it better soon
+    print( "print")
+
+    return true
+end
+
+soccerBall:addEventListener( "Touch", onObjectTouch )
+
